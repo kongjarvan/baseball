@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Blog</title>
+<title>Baseball</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -28,8 +28,8 @@
 			</button>
 			<div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
 				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link" href="../stardium/stardiumList">경기장목록</a></li>
-					<li class="nav-item"><a class="nav-link" href="../stardium/addStardium">경기장 등록</a></li>
+					<li class="nav-item"><a class="nav-link" href="../stadium/stadiumList">경기장목록</a></li>
+					<li class="nav-item"><a class="nav-link" href="../stadium/addStadium">경기장 등록</a></li>
 					<li class="nav-item"><a class="nav-link" href="../team/teamList">팀 목록</a></li>
 					<li class="nav-item"><a class="nav-link" href="../team/addTeam">팀 등록</a></li>
 					<li class="nav-item"><a class="nav-link" href="../player/playerList">선수 목록</a></li>
