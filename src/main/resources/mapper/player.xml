@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="site.metacoding.baseball.domain.player.PlayerDao">
+
+	<select id="findAll"
+		resultType="site.metacoding.baseball.web.dto.response.Player.ListDto">
+		SELECT
+		p.id, p.playername, if(t.teamname is NULL, '미정',
+		t.teamname) AS teamname,
+		age, position
+		FROM player p
+		LEFT OUTER JOIN
+		team
+		t
+		ON p.teamId = t.id
+		ORDER BY p.id DESC
+	</select>
+
+	<insert id="insert">
+		insert INTO
+		player(playername, teamId, age, position, createdAt)
+		VALUES(#{playername}, #{teamId}, #{age}, #{position}, NOW());
+	</insert>
+
+
+</mapper>

@@ -10,7 +10,6 @@ public interface StadiumDao {
 	public void insert(Stadium stadium);
 	public List<Stadium> findAll();
 	public Stadium findById(Integer id);
-	public Stadium findByStadiumname(String stadiumname);
 	public void update(Stadium stadium);
 	public void deleteById(Integer id);
 }

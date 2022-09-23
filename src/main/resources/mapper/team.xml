@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="site.metacoding.baseball.domain.team.TeamDao">
+
+	<select id="findAll"
+		resultType="site.metacoding.baseball.web.dto.response.team.MainDto">
+		SELECT
+		t.id, t.teamname, if(s.stadiumname is NULL, '미정',
+		s.stadiumname) AS stadiumname
+		FROM team t
+		LEFT OUTER JOIN
+		stadium s
+		ON
+		t.stadiumId = s.id
+		ORDER BY t.id DESC
+	</select>
+
+
+	<insert id="insert">
+		insert into team(teamname, stadiumId, createdAt)
+		VALUES(#{teamname}, #{stadiumId}, NOW());
+	</insert>
+
+
+	<select id="findById"
+		resultType="site.metacoding.baseball.web.dto.response.team.MainDto">
+		SELECT
+		t.id, t.teamname, if(s.stadiumname is NULL, '미정',
+		s.stadiumname) AS stadiumname
+		FROM team t
+		LEFT OUTER JOIN
+		stadium s
+		ON
+		t.stadiumId = s.id
+		where t.id=#{id}
+	</select>
+
+
+</mapper>

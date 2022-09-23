@@ -3,7 +3,7 @@
 <%@ include file="../layout/header.jsp"%>
 <div class="container">
 	<h1>경기장 등록</h1>
-	<form action="/stadium/add" method="post">
+	<form>
 		<div>
 			구장 이름 : <input id="stadiumname" type="text" /> 
 			지역: <input id="location" type="text" />

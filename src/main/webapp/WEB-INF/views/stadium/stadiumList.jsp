@@ -19,7 +19,7 @@
 				<th>번호</th>
 				<th>경기장</th>
 				<th>지역</th>
-				<th>수정/삭제</th>
+				<th>수정</th>
 
 			</tr>
 		</thead>

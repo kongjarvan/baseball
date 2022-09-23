@@ -53,7 +53,7 @@ public class StadiumController {
 	
 	@PutMapping("/stadium/{id}/update")
 	public @ResponseBody CMRespDto<?> update(@PathVariable Integer id, @RequestBody UpdateDto updateDto){
-		Stadium stadium = stadiumService.구장수정하기(id, updateDto);
+		stadiumService.구장수정하기(id, updateDto);
 		return new CMRespDto<>(1, "구장수정 성공", null);
 	}
 	
