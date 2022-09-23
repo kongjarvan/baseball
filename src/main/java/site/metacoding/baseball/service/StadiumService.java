@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import site.metacoding.baseball.domain.stadium.Stadium;
 import site.metacoding.baseball.domain.stadium.StadiumDao;
+import site.metacoding.baseball.web.dto.response.stadium.UpdateDto;
 import site.metacoding.baseball.web.dto.response.stadium.WriteDto;
-import site.metacoding.baseball.web.dto.response.stadium.MainDto;
 
 
 @RequiredArgsConstructor
@@ -17,9 +17,9 @@ public class StadiumService {
 
 	private final StadiumDao stadiumDao;
 	
-	public List<MainDto> 구장목록보기(){
-		List<MainDto> mainDto = stadiumDao.findAll();
-		return mainDto;
+	public List<Stadium> 구장목록보기(){
+		List<Stadium> stadium = stadiumDao.findAll();
+		return stadium;
 	}
 	
 	
@@ -28,11 +28,22 @@ public class StadiumService {
 		stadiumDao.insert(stadium);
 	}
 	
-	public MainDto 구장수정화면가져오기(Integer id) {
-		MainDto stadium = stadiumDao.findById(id);
+	public Stadium 구장수정화면가져오기(Integer id) {
+		Stadium stadium = stadiumDao.findById(id);
 		return stadium;
 		
 	}
 	
+	
+	public Stadium 구장수정하기(Integer id, UpdateDto updateDto) {
+		Stadium stadium = stadiumDao.findById(id);
+		stadium.update(updateDto);
+		stadiumDao.update(stadium);
+		return stadium;
+	}
+	
+	public void 구장삭제(Integer id) {
+		stadiumDao.deleteById(id);
+	}
 	
 }

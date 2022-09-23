@@ -6,9 +6,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import site.metacoding.baseball.web.dto.response.stadium.UpdateDto;
 import site.metacoding.baseball.web.dto.response.stadium.WriteDto;
 
-@AllArgsConstructor
+
 @NoArgsConstructor
 @Setter
 @Getter
@@ -24,9 +25,9 @@ public class Stadium {
 		this.location = location;
 	}
 	
-	public void update(WriteDto writeDto) {
-		this.stadiumname = writeDto.getStadiumname();
-		this.location = writeDto.getLocation();
+	public void update(UpdateDto updateDto) {
+		this.stadiumname = updateDto.getStadiumname();
+		this.location = updateDto.getLocation();
 	}
 	
 }

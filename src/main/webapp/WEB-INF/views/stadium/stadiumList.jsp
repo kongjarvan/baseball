@@ -2,6 +2,7 @@
 
 <%@ include file="../layout/header.jsp"%>
 <div class="container">
+
 	<h1>경기장 목록</h1>
 	<div class="d-flex justify-content-end">
 		<div style="width: 300px">
@@ -18,7 +19,8 @@
 				<th>번호</th>
 				<th>경기장</th>
 				<th>지역</th>
-				<th>수정하기</th>
+				<th>수정/삭제</th>
+
 			</tr>
 		</thead>
 		<tbody class="table">
@@ -33,5 +35,11 @@
 		</tbody>
 	</table>
 </div>
+
+<script>
+
+
+
+</script>
 </body>
 </html>
